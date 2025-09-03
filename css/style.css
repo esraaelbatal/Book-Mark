@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5e6cc;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+  color: #333;
+  transition: color 0.3s ease;
+  padding-bottom: 10px;
+  border-bottom: 3px dashed rgb(4, 4, 4);
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+h1:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.subtitle {
+  font-family: "Righteous", cursive;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  background: transparent;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form input.valid {
+  border-color: green;
+  background: #eaffea url("https://img.icons8.com/emoji/20/000000/check-mark-emoji.png") no-repeat right 10px center;
+}
+
+.form input.invalid {
+  border-color: red;
+  background: #ffeaea url("https://img.icons8.com/emoji/20/000000/cross-mark-emoji.png") no-repeat right 10px center;
+}
+
+button {
+  background: #d35400;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e67e22;
+}
+
+.form label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+table th {
+  background: #f2f2f2;
+  font-weight: bold;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+/* ====== الرسالة (Modal) ====== */
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert.hidden {
+  display: none;
+}
+
+.alert .box {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: left;
+}
+
+.alert .box h3 {
+  margin-top: 0;
+  color: #c0392b;
+}
+
+.alert .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* تغيير لون النص عند التحديد */
+::selection {
+  background: orange;
+  color: white;
+}
