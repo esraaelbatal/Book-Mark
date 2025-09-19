@@ -1,52 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bookmarker</title>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+  <link href="images/bookmark.png" rel="icon">
+  <link href="cruds.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>Bookmarker</h1>
-  <p class="subtitle">📑 Bookmark your favorite sites 📑</p>
 
-  <div class="form">
-    <label>📌 Site Name</label>
-    <input type="text" id="siteName" placeholder="Bookmark Name" oninput="validateName()">
+  <section class="w-75 mx-auto p-4 ">
+    <h1 class="text-center my-3">Bookmarker</h1>
 
-    <label>🔗 Site URL</label>
-    <input type="text" id="siteURL" placeholder="Website URL" oninput="validateURL()">
+    <div class="container w-100 p-3 py-4 mt-5 gap-4">
+      <div class="conatin d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-bookmark" style="color: #4CAF50; font-size: 26px;"></i>
+        <h2 class="fw-bold mx-2">Bookmark your favorite sites</h2>
+        <i class="fa-solid fa-bookmark" style="color: #A6A633; font-size: 26px;"></i>
+      </div>
 
-    <button onclick="addBookmark()">Submit</button>
+      <div class="my-5 text-center">
+        <div class="d-flex gap-2">
+          <i class="fa-solid fa-book-bookmark fs-6"></i>
+          <label for="bookmarkName" class="fw-bold mb-0">Site Name</label>
+        </div>
+        <input type="text" class="form-control mx-auto" id="bookmarkName" placeholder="Bookmark Name">
+      </div>
+
+      <div class="my-5 text-center">
+        <div class="d-flex gap-2">
+          <i class="fa-solid fa-link pe-2"></i>
+          <label for="bookmarkURL" class="fw-bold mb-0">Site URL</label>
+        </div>
+        <input type="url" class="form-control mx-auto" id="bookmarkURL" placeholder="Website URL" required>
+      </div>
+
+      <div class="text-center">
+        <button onclick="submitBookmark()" class="btn btn-submit px-5" id="submitBtn">Submit</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="websiteList" class="mt-4"></div>
+
+  <!-- Error Box -->
+  <div id="errorOverlay" class="overlay" style="display:none;">
+    <div class="alertBox">
+      <div class="alertHeader">
+        <div class="circles">
+          <span class="circl red"></span>
+          <span class="circl yellow"></span>
+          <span class="circl green"></span>
+        </div>
+        <button class="closeBtn" onclick="closeError()">&times;</button>
+      </div>
+      <div class="alertContent">
+        <strong>Site Name or Url is not valid, Please follow the rules below :</strong>
+        <ul>
+          <li>Site name must contain at least 3 characters</li>
+          <li>Site URL must be a valid one</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Index</th>
-        <th>Website Name</th>
-        <th>Visit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody id="bookmarksList"></tbody>
-  </table>
-
-  <!-- رسالة تحذير -->
-  <div id="alertBox" class="alert hidden">
-    <p>❌ Site Name or URL is not valid. Please follow the rules:</p>
-    <ul>
-      <li>✔ Site name must contain at least 3 characters</li>
-      <li>✔ Site URL must be valid (http:// or https://)</li>
-    </ul>
-    <span onclick="closeAlert()">✖</span>
-  </div>
-
-
-  
-  
-
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="cruds.js"></script>
 </body>
 </html>

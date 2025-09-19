@@ -1,0 +1,89 @@
+body {
+  background-color: rgb(247, 236, 222) !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+  color: #352e28;
+  font-weight: 500;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  width: 24%;
+  height: 35%;
+  bottom: 5px;
+  background-color: #fec260;
+  transition: height 350ms;
+  z-index: -1;
+}
+
+.container {
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+  border-color: #352e28;
+}
+
+.container h2 {
+  font-family: "Righteous", cursive;
+  font-size: 25px;
+  background: linear-gradient(to right, #4CAF50, #A6A633);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.btn-submit {
+  background: #d1512d;
+  color: white;
+}
+
+.btn-submit:hover {
+  background: #bb4120;
+  color: white;
+}
+
+.btn-visit {
+  background-color: #9eb23b;
+  color: white;
+}
+
+.btn-visit:hover {
+  background-color: #7a962f;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #d30820;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #a20619;
+  color: white;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alertBox {
+  background-color: white;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.9);
+  padding: 20px;
+}
